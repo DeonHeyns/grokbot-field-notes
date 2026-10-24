@@ -13,6 +13,7 @@ no account-specific feature availability was inferred from them.
 | [Build skills](https://learn.chatgpt.com/docs/build-skills) | Skill metadata, local discovery and plugin distribution |
 | [Scheduled tasks](https://learn.chatgpt.com/docs/automations) | Saved schedules, independent/chat runs, supported triggers and testing |
 | [Dots: tasks and memory](https://learn.chatgpt.com/docs/dots/tasks-and-memory) | Ongoing work, delegated context boundaries and saved recurrence |
+| [Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents) | Actual delegation, worker context and orchestration boundaries |
 | [Browser](https://learn.chatgpt.com/docs/browser) | Supported browser work and authentication/control boundaries |
 | [Permissions](https://learn.chatgpt.com/docs/permissions) | Enforced filesystem/network access and managed controls |
 | [Agents overview](https://developers.openai.com/api/docs/guides/agents) | Agents API, Agents SDK and Responses API are distinct runtimes |

@@ -41,6 +41,10 @@ does not grant access or override those controls.
 - `ports/chatgpt/BASE.md` is the shared contract for generated role packs.
 - Run `python3 scripts/build_ports.py` after changing either. Do not hand-edit
   `ports/chatgpt/roles/*.md` or `ports/cursor/rules/*.mdc`.
+- CTO workflow assignments live in `ports/chatgpt/cto-team/`. After changing
+  those source files, run `python3 scripts/build_cto_pack.py`; do not hand-edit
+  its generated `TEAM-PACK.md`. These are workflow configurations, not new
+  generic roster roles.
 - `notes/` and existing PDFs in `guide/` are historical material. Do not relabel
   their Grok observations or cost figures as ChatGPT facts.
 - Keep `LICENSE` and upstream credit. Do not add private examples or secrets
@@ -52,6 +56,7 @@ does not grant access or override those controls.
 
 ```bash
 python3 scripts/build_ports.py --check
+python3 scripts/build_cto_pack.py --check
 python3 scripts/check_docs.py
 python3 -m unittest discover -s tests
 git diff --check

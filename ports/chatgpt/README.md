@@ -5,6 +5,10 @@ or create a fleet of agents to use these instructions.
 
 ## Five-minute first run
 
+For a manager coordinating specialists, follow the
+[CTO team tutorial](CTO-TEAM.md): Chief of Staff and all eight specialists, with
+a single-file instruction pack and a first-run verification checklist.
+
 1. Choose ChatGPT Work for a task with a finished deliverable.
 2. Open a generated prompt, such as [Chief of Staff](roles/chief-of-staff.md),
    [Daily Digest](roles/daily-digest.md) or [PR Reviewer](roles/pr-reviewer.md).
