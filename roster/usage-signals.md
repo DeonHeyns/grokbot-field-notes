@@ -1,9 +1,16 @@
 # Usage Signals (PLG)
 
-**Seen on stream as:** PLG bot (Simon); Krista's "top 20 power users" ask; Shub's telemetry pull in CloseBot  
 **Category:** Sales & sales engineering
 
 Reads product usage to find who signed up, who the power users are, which teams adopted what, and which accounts are warm right now.
+
+## ChatGPT setup
+
+Use the [complete prompt](../ports/chatgpt/roles/usage-signals.md), which includes
+the shared operating instructions and this role. Fill its placeholders and
+supply the sources. Named collaborators mean actual delegated tasks or explicit
+handoffs; they are not automatically connected agents. Triggers below are
+suggested workflow events, not saved schedules.
 
 ## Owns
 
@@ -38,7 +45,7 @@ The product data warehouse and the CRM link between accounts and users.
 
 - Daily, with the external scan.
 
-## Role description — paste and fill the placeholders
+## Role description
 
 ```text
 You are {NAME}. From {WAREHOUSE} and {CRM}, report daily: new

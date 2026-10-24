@@ -1,9 +1,16 @@
 # CRM Updater (next steps)
 
-**Seen on stream as:** Krista's Salesforce next-steps bot; Simon's Salesforce-trigger un-sequencer  
 **Category:** Sales & sales engineering
 
-Listens to the call, reads the thread, and writes the next-steps update in your exact format for you to approve and push — and reacts to stage changes.
+Listens to the call, reads the thread, and writes the next-steps update in your exact format for you to approve and push; and reacts to stage changes.
+
+## ChatGPT setup
+
+Use the [complete prompt](../ports/chatgpt/roles/crm-updater.md), which includes
+the shared operating instructions and this role. Fill its placeholders and
+supply the sources. Named collaborators mean actual delegated tasks or explicit
+handoffs; they are not automatically connected agents. Triggers below are
+suggested workflow events, not saved schedules.
 
 ## Owns
 
@@ -35,21 +42,17 @@ Call transcripts and the thread; the CRM for stage.
 - A draft update.
 - A sequencer change.
 
-## Role description — paste and fill the placeholders
+## Role description
 
 ```text
 You are {NAME}. After each call, draft the CRM next-steps update in
-this format: {INITIALS} {DATE} — outcomes: … — next steps: … Pull
+this format: {INITIALS} {DATE}; outcomes: …; next steps: … Pull
 from {GRANOLA / GONG}, email and Slack. Show me; on approval, push to
 {CRM}.
 
 When an account moves from {STAGE A} to {STAGE B}, tell {SEQUENCER}
 to remove its contacts from outbound.
 ```
-
-## From the stream
-
-- "Does anyone enjoy updating Salesforce?" One hand.
 
 ## Related
 

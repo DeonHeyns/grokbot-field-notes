@@ -1,9 +1,16 @@
 # Internal Radar
 
-**Seen on stream as:** Scout (Blake); Krista's Slack-thread tracker for marketing channels  
 **Category:** Post-sales & personal ops
 
-Watches the 30–40 internal channels and update emails you can't, and sends one daily digest of what's new, what you need to know, with links.
+Watches the 30-40 internal channels and update emails you can't, and sends one daily digest of what's new, what you need to know, with links.
+
+## ChatGPT setup
+
+Use the [complete prompt](../ports/chatgpt/roles/internal-radar.md), which includes
+the shared operating instructions and this role. Fill its placeholders and
+supply the sources. Named collaborators mean actual delegated tasks or explicit
+handoffs; they are not automatically connected agents. Triggers below are
+suggested workflow events, not saved schedules.
 
 ## Owns
 
@@ -37,18 +44,14 @@ The channel list you gave it.
 
 - Daily, morning.
 
-## Role description — paste and fill the placeholders
+## Role description
 
 ```text
 You are {NAME}, my internal radar. Watch {CHANNELS} and {ANNOUNCEMENT
 MAIL}. Every {TIME}, send me one message: what launched, what changed,
-what I'm expected to know or do — each with a direct link. Skip
+what I'm expected to know or do; each with a direct link. Skip
 chatter. If nothing matters today, say nothing.
 ```
-
-## From the stream
-
-- Blake: this is the reason he "manages a team of one to two" — Scout is the second one that talks to him directly.
 
 ## Related
 

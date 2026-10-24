@@ -1,59 +1,79 @@
-[![Grok Bot Guide by SpaceX Engineers](guide/cover.png)](guide/grok-bot-guide-by-spacex-engineers.pdf)
+# ChatGPT Agent Field Notes
 
-# Grok Bot Field Notes
+Practical operating rules, 69 role cards, and nine workflows for doing real work
+with **ChatGPT Work and Codex**. Adapted from the original Grok Bot field notes;
+the original stream notes and PDFs remain available as historical sources.
 
-[![Stars](https://img.shields.io/github/stars/unicodef1wn/grokbot-field-notes?style=flat)](https://github.com/unicodef1wn/grokbot-field-notes/stargazers)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Download the PDF](https://img.shields.io/badge/PDF-download-black.svg)](https://github.com/unicodef1wn/grokbot-field-notes/releases/latest/download/grok-bot-guide-by-spacex-engineers.pdf)
+This is an instruction pack, not a running agent platform. Copying a prompt does
+not create a background worker, connect an account, grant permissions, or save a
+schedule. Start with one role and one task you can verify.
 
-Copy the rules into your repo and go:
+## Start here
 
-```bash
-curl -o AGENTS.md https://raw.githubusercontent.com/unicodef1wn/grokbot-field-notes/main/AGENTS.md
-```
+1. Open [the ChatGPT quickstart](ports/chatgpt/README.md).
+2. Choose one [role](roster/README.md), for example
+   [Chief of Staff](ports/chatgpt/roles/chief-of-staff.md),
+   [Daily Digest](ports/chatgpt/roles/daily-digest.md), or
+   [PR Reviewer](ports/chatgpt/roles/pr-reviewer.md).
+3. Copy its complete instruction block into a ChatGPT Work conversation or
+   project instructions. Fill the placeholders and attach its source material.
+4. Run one real, bounded task. Check the result against the acceptance criteria.
+5. Only then add a [saved schedule](agents/SKILLS-AND-ROUTINES.md) if it needs to repeat.
 
-Three engineers from the xAI Grok Bot team built and launched a product from an empty repo in 72 hours, live on stream, using their own agent platform: [Roshan Sadanani](https://www.linkedin.com/in/roshansadanani) (product), [Lauren Tan](https://www.linkedin.com/in/laurenelizabethtan) (engineering, author of PStack), and [Matt Palmer](https://www.linkedin.com/in/matt-palmer) (developer experience). This repo is what I pulled out of those three days: a designed guide, rules you can drop into your own agents, nine role playbooks, a catalogue of bot roles, and a log of everything that broke.
+For coding work, use Codex with this repository's [AGENTS.md](AGENTS.md). When
+adopting it in another repository, merge the relevant rules into the existing
+file and replace the verification commands with that project's commands.
+Do not overwrite an existing AGENTS.md with a download.
+
+## Choose the right setup
+
+| Need | Start with |
+|---|---|
+| Research, analysis, documents, operational work | ChatGPT Work, one role prompt, relevant files and plugins |
+| Related tasks using the same sources and standards | A ChatGPT project with shared instructions and separate task chats |
+| Ongoing responsibility with follow-up between conversations | Your dot, where available, with explicit sources and boundaries |
+| Code changes, tests, repository review | Codex, AGENTS.md, a scoped branch and a verification command |
+| A repeatable process | A tested workflow, then a skill and/or saved scheduled task |
+| An application that controls its own agent execution | An OpenAI API runtime, implemented separately from this prompt pack |
+
+Feature access varies by account, platform and workspace. See the dated
+[product mapping and official sources](reference/PRODUCT.md). Named roles are
+responsibilities, not a promise that ChatGPT creates 69 permanent agents.
 
 ## What's here
 
-| Path | What it is |
+| Path | Purpose |
 |---|---|
-| `AGENTS.md` | House rules for a coding agent. Put it in your repo root and your agent reads it. |
-| `ANTIPATTERNS.md` | Forty things that broke on air. Each one: what broke, why, and the rule that came out of it. |
-| `agents/` | The longer references `AGENTS.md` points at: verification, orchestration, skills and routines, prompts. |
-| `roster/` | Sixty-nine agent roles, one file each. What the role owns, what it doesn't, where it gets its facts, what needs approval, and a description you can paste. |
-| `playbooks/` | Nine role workshops: engineering, PM, founders, sales engineering, sales, SDR, support, post-sales, marketing. Each has the team of bots, the workflow as it ran, the prompts, the routines and the numbers. |
-| `guide/` | Two PDFs. [*Grok Bot Guide by SpaceX Engineers*](guide/grok-bot-guide-by-spacex-engineers.pdf), 24 pages that tell the three days as a story: mental model, software factory, case study, failure log, economics. [*Grok Bot Marketing Guide*](guide/grok-bot-marketing-guide.pdf), 14 pages for marketers: one campaign across six bots, RevOps tools instead of rules, growth on launch day, distribution, ready-made prompts. |
-| `ports/` | The roster as Cursor rules, one `.mdc` per role, generated from `roster/`. Copy the ones you want into `.cursor/rules/`. |
-| `.github/` | A pull request template that turns the verification loop into a form: reproduced, proof attached, scope, needs a human. Copy it into your repo. |
-| `reference/` | Two short files: `ECONOMICS.md`, every cost and metric quoted with the rule it supports; `PRODUCT.md`, the parts of Grok Bot that change how you design a bot: memory, what transfers on duplicate and share, isolation, permissions. |
-| `notes/` | Structured notes, one per day. Product facts, workflows, prompts, failures, numbers, who was who. Everything else was built from these. |
+| [AGENTS.md](AGENTS.md) | Repository instructions for Codex and compatible coding agents |
+| [agents/](agents/README.md) | Verification, coordination, prompts, skills and scheduling |
+| [roster/](roster/README.md) | 69 adapted role cards: scope, sources, permissions, triggers and outputs |
+| [playbooks/](playbooks/README.md) | Nine ChatGPT workflows with a first-run prompt and proof requirements |
+| [ports/chatgpt/](ports/chatgpt/README.md) | Complete prompts generated from role cards and shared operating rules |
+| [ports/cursor/](ports/cursor/README.md) | Optional generated Cursor rules from the same source |
+| [ANTIPATTERNS.md](ANTIPATTERNS.md) | Common failures when applying these patterns to ChatGPT |
+| [reference/](reference/PRODUCT.md) | Product mapping, migration decisions, sources and usage budgeting |
+| [.github/PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md) | Review form with evidence and explicit merge authority |
+| [guide/](guide/README.md), [notes/](notes/README.md) | Original Grok PDFs and historical material, not ChatGPT instructions |
 
-## Where to start
+## Maintain this pack
 
-- You want rules for your agent now: copy `AGENTS.md` into your repo root.
-- Your agents keep asking you to test their work: `agents/VERIFICATION.md`.
-- You are designing a team of agents rather than prompting one: `agents/ORCHESTRATION.md`.
-- You want the wording that worked: `agents/PROMPTS.md`.
-- You use Cursor: `ports/cursor/rules/`, copy what you need into `.cursor/rules/`.
-- You want your agents' PRs to carry proof: `.github/PULL_REQUEST_TEMPLATE.md`.
-- You want a bot's job description to paste: `roster/`, starting with `roster/README.md`.
-- You want a setup for your own role, say support or sales: `playbooks/`, starting with `playbooks/README.md`.
-- You want to know what goes wrong: `ANTIPATTERNS.md`.
-- You want to know what it costs and where the tokens go: `reference/ECONOMICS.md`.
-- You are deciding what goes in memory versus the description: `reference/PRODUCT.md`.
-- You want the whole story: [the PDF guide](guide/grok-bot-guide-by-spacex-engineers.pdf).
-- You do marketing: [the Marketing Guide](guide/grok-bot-marketing-guide.pdf).
-- You want to check a claim: `notes/`.
+Edit `roster/*.md` and `ports/chatgpt/BASE.md`, then regenerate both ports:
 
-## In one paragraph
+```bash
+python3 scripts/build_ports.py
+python3 scripts/build_ports.py --check
+python3 scripts/check_docs.py
+python3 -m unittest discover -s tests
+```
 
-Give each agent one narrow job and a name. Build a verification loop before you build the second agent.
+Python 3.10+; no third-party packages or API keys required. These checks validate
+documentation and generated prompts. They do not prove a connected account,
+scheduled task or external workflow has been deployed or tested.
 
-Make the agent reproduce a bug before it fixes one, and attach proof to everything. When it's wrong, write down the general principle, never the specific story.
+## Attribution
 
-Audit your routines weekly, because frequency is where the money goes. Keep a human gate on migrations, deploys, money and permissions, no matter how well the loop has been working.
-
-## License
-
-MIT. Copy anything here into your own repo.
+Based on [unicodef1wn/grokbot-field-notes](https://github.com/unicodef1wn/grokbot-field-notes).
+The original MIT copyright notice is retained in [LICENSE](LICENSE).
+See [provenance](PROVENANCE.md) for the source revision and the boundary between
+historical observations and this adaptation. This is an independent adaptation,
+not official OpenAI documentation or an endorsement.
