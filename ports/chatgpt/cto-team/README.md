@@ -1,81 +1,109 @@
-# CTO team: load all eight specialists
+# Create a visible CTO agent team in ChatGPT
 
-This folder contains ready-to-load instructions for a Chief of Staff dot and
-all eight requested specialists. Instructions are built; connected access,
-actual delegation, record persistence and recurring execution need validation
-in your work workspace. No live agents or schedules are installed by these files.
+Create eight specialist Workspace Agents first, then create a ninth Workspace
+Agent named CTO Chief of Staff. All nine are visible in ChatGPT's Agents area.
+Dots has no required role in this setup. Files supply instructions; they do not
+install agents, connect accounts or establish inter-agent communication.
 
-## Setup tutorial
+## 1. Create the individual agents
 
-1. Open your Chief of Staff dot in your approved work workspace.
-2. Download the [single-file team pack](TEAM-PACK.md) and attach it there. This
-   contains the manager, shared boundaries and all eight complete assignments.
-3. Fill the private configuration section there, or let the dot ask for missing
-   inputs. Keep confidential configuration and results out of this repository.
-4. Paste the activation request below. It authorizes one coordinated baseline,
-   not recurring schedules or external messages.
-5. Review the returned task references, specialist statuses, briefing and record
-   locations. Verify an email response, a meeting timezone, a PR/check state and
-   a news source against the original. Check proposed commitments are not being
-   recorded as confirmed decisions and that partial retrieval stays visible.
-6. Once useful, tell the dot your preferred reporting times and timezone. Have
-   it inspect existing schedules, propose consolidation and confirm any saved
-   schedules. Role names and connected apps alone do not create monitoring.
+Use your approved work workspace. For each row below:
 
-## Activation request
+1. Open **Agents > Create > Start blank** (or use the conversational builder).
+2. Set the listed name and use that file's full contents as the instructions.
+   If needed, attach the file and explicitly tell the builder to use it.
+3. Add the required available source tools and files. Verify the account and
+   scope. Keep message sending and source edits approval-controlled.
+4. Configure a private report destination and authorize only the intended
+   report writes. If unavailable, use manual report transfer during testing.
+5. Under **Channels > ChatGPT**, start with **Private to me**.
+6. Select **Preview**, run one bounded assignment, and inspect sources and report
+   saving. Select **Create**, then record the actual agent link in the directory.
+
+| Agent name | Instructions | Sources to configure |
+|---|---|---|
+| CTO Email | [Email](01-email.md) | Approved mailbox and sent mail |
+| CTO Meetings | [Meetings](02-meetings.md) | Calendar, meeting records |
+| CTO GitHub | [GitHub](03-github.md) | Selected repositories, PRs, issues and checks |
+| CTO Industry Intelligence | [Industry](04-industry-news.md) | Web search and industry source guidance |
+| CTO Technology Intelligence | [Technology](05-technology-news.md) | Web search and confirmed stack |
+| CTO AI Opportunities | [AI](06-ai-opportunities.md) | Web search, priorities and opportunity backlog |
+| CTO Strategy | [Strategy](07-strategy.md) | Priorities, decisions and specialist reports |
+| CTO Project Management | [Projects](08-project-management.md) | Plans, boards and specialist reports |
+
+First test: use the assignment's baseline window and request a source-linked
+report without external messages or source edits. Check an email reply, a
+meeting timezone, a PR status and a news source against originals. For Strategy
+and Project Management, supply the existing reports explicitly. A private agent
+listing does not itself verify the permissions of the connected report storage.
+
+## 2. Create a Chief of Staff agent
+
+1. Open **Agents > Create > Start blank** again.
+2. Name it **CTO Chief of Staff** and load
+   [the manager instructions](00-chief-of-staff.md).
+3. Complete [the private configuration and agent directory](CONFIGURATION.md)
+   in your work workspace. Give the manager the actual links, report locations,
+   priorities and source scope. Do not commit filled configuration to this repo.
+4. Add a connection that can read the designated specialist reports and, when
+   authorized, write the master commitments and decisions records.
+5. Start in **shared-report mode**. The specialists run manually or on separately
+   confirmed schedules; the manager reads their reports. Agent names and links
+   do not grant a built-in ability to call them.
+6. Preview the request below, then select **Create** when its result is verified.
 
 ```text
-Read the attached CTO team pack in full. Act as my Chief of Staff and configure
-all eight specialist responsibilities defined there: Email, Meetings, GitHub,
-Industry News, Global Technology News, AI News and Business Uses, Strategy,
-and Project Management.
+Act as CTO Chief of Staff using your configured instructions and private agent
+directory. Read the reports from my eight Workspace Agents. Check timestamps,
+coverage and evidence. Return one briefing with priorities, decisions and
+recommendations, commitments at risk, meeting preparation, external developments
+and missing information. Include each specialist's report link and status.
 
-This is for my work as CTO of Nephila Capital. Confirm which instructions you
-read and which actual delegation/source capabilities are available. Ask in one
-batch for missing private configuration needed to proceed. Do not invent access.
-
-Use actual delegated tasks when supported. Give each worker its full assignment
-and the relevant context. Start the six independent specialists, then use their
-verified findings for Project Management and Strategy. Queue tasks within actual
-capacity. If a source is unavailable, mark that specialist blocked or partial
-and continue useful independent work.
-
-Run one baseline and return one consolidated briefing, supporting specialist
-results, task references where available, proposed commitments and decisions,
-and the location/status of saved records. Keep private records in the agreed
-work location. Do not send messages, change source systems, modify code or
-create schedules. Tell me clearly whether actual delegation worked.
+Reconcile duplicates and conflicting findings. Propose master-record updates;
+save them only within my configured authority. Prepare follow-up requests for
+named specialists, labelled not dispatched unless an actual configured tool
+successfully sent them. Do not replace the specialists with subagents.
+Do not create schedules or send messages to people during this test.
 ```
 
-## Individual instructions
+### Enable active coordination when an integration is ready
 
-- [Email](01-email.md)
-- [Meetings](02-meetings.md)
-- [GitHub](03-github.md)
-- [Industry News](04-industry-news.md)
-- [Global Technology News](05-technology-news.md)
-- [AI News and Business Uses](06-ai-opportunities.md)
-- [Strategy](07-strategy.md)
-- [Project Management](08-project-management.md)
+If the manager must request runs itself, configure and test a separate
+integration. Add an API channel to each specialist and expose approved trigger
+and status operations to the Chief of Staff through a supported tool, such as
+a custom MCP. Store tokens in the integration's secret store, not these files.
+Record API channel identifiers separately from ChatGPT agent links.
 
-- [Chief of Staff management instructions](00-chief-of-staff.md)
-- [Private configuration template](CONFIGURATION.md)
+The documented API can trigger published agents and poll run status (beta), but
+cannot retrieve response text. Each specialist must therefore write its report
+to a location the manager can read, or use another verified result mechanism.
+A successful trigger is not a successful report. Test dispatch, source access,
+report persistence, manager readback, failures and follow-ups end to end before
+claiming autonomous coordination. This repository does not implement that bridge.
 
-The manager waits for delivery evidence before asking Strategy to assess it.
-News specialists provide bounded research, with dates, source links and business
-implications. Each specialist reports coverage and uncertainty; the manager owns
-reconciliation and is the single writer of the master records.
+The intended sequence is six independent source/research agents, then Project
+Management, then Strategy, then the Chief of Staff's consolidated briefing.
+Use a cycle ID and freshness checks. Without the bridge, perform handoffs
+manually; schedule offsets alone do not enforce this dependency order.
 
-## Sources and validation
+## 3. Dots: optional, outside the core setup
 
-Product guidance reviewed 24 October 2026:
-[Dots: tasks and memory](https://learn.chatgpt.com/docs/dots/tasks-and-memory)
-and [Subagents](https://learn.chatgpt.com/docs/agent-configuration/subagents).
-These support real delegation, explicit task context and saved recurrence;
-availability must be verified in the actual workspace. Workflow choices in
-this pack are recommendations. Repository checks validate documents, not live
-mailbox, calendar, GitHub or background execution behavior.
+No dot is needed to create or run this team. Your Chief of Staff is the ninth
+Workspace Agent. You can talk to it directly in ChatGPT. A personal dot could
+later be an optional interface to approved summaries if access is configured,
+but it is not the coordinator, does not own the specialists and gains no access
+from their names. Keep private work information in the approved work workspace.
+Do not create a duplicate Chief of Staff in dots as part of this tutorial.
 
-Maintain the assignment files here for this CTO workflow. General role cards
-remain in [the roster](../../../roster/README.md). Rebuild the combined pack with
-`python3 scripts/build_cto_pack.py` after editing its source files.
+## Maintenance and validation
+
+[TEAM-PACK.md](TEAM-PACK.md) is a reference bundle of all nine instruction sets,
+not a bulk import or dot activation file. Use individual files in the builder.
+Rebuild it with `python3 scripts/build_cto_pack.py` after source edits.
+
+Reviewed 25 October 2026 against
+[Workspace Agent setup](https://help.openai.com/en/articles/20001143-chatgpt-workspace-agents-for-enterprise-and-business)
+and [API triggers](https://learn.chatgpt.com/workspace-agents/trigger-runs).
+These document creation and API capabilities; shared-report contracts and the
+orchestration bridge are proposed implementation choices. Document checks do
+not verify live accounts, agent creation, report writes or orchestration.

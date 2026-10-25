@@ -16,7 +16,7 @@ def main():
     args = parser.parse_args()
     text = "# CTO team: complete portable instruction pack\n\n"
     text += "Generated from the individual files in this folder. Do not edit directly.\n"
-    text += "Loading instructions does not install agents or create schedules.\n\n"
+    text += "Reference bundle: create each specialist separately, then the Chief of Staff Workspace Agent. Dots is not required. Loading instructions does not install agents or create schedules.\n\n"
     text += "\n\n---\n\n".join((TEAM / name).read_text() for name in SOURCES)
     target = TEAM / "TEAM-PACK.md"
     if args.check:

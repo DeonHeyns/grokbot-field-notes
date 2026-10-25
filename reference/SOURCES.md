@@ -22,3 +22,13 @@ The role boundaries, evidence checklists, handoff schema, suggested cadence and
 retry policies are this pack's recommended practices, not claims of built-in
 OpenAI defaults. No model price, quota, universal connector or latency guarantee
 is asserted here.
+
+## CTO Workspace Agent deployment update
+
+Reviewed **25 October 2026**:
+- [Workspace Agents](https://help.openai.com/en/articles/20001143-chatgpt-workspace-agents-for-enterprise-and-business): visible agents, builder, tools, preview, access and channels.
+- [Workspace Agent triggers](https://learn.chatgpt.com/workspace-agents/trigger-runs): published-agent triggering, beta status polling and no response-text retrieval through the API.
+
+The CTO tutorial uses nine Workspace Agents, with dots optional and outside the
+core setup. Shared reports and an optional orchestration integration are design
+choices; no native agent-to-agent connection or deployed bridge is asserted.

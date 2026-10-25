@@ -1,8 +1,11 @@
-# CTO specialist team
+# CTO Workspace Agent team
 
-Follow the [complete eight-specialist setup tutorial](cto-team/README.md).
+Follow the [setup tutorial](cto-team/README.md):
 
-Download or attach the [single-file team pack](cto-team/TEAM-PACK.md) to your
-Chief of Staff dot. It includes the manager and all eight complete assignments:
-Email, Meetings, GitHub, Industry News, Global Technology News, AI News and
-Business Uses, Strategy, and Project Management.
+1. Create the eight individual Workspace Agents using their own instruction files.
+2. Create CTO Chief of Staff as a ninth Workspace Agent and connect shared reports.
+3. Dots is optional and outside this setup.
+
+[The complete pack](cto-team/TEAM-PACK.md) is a reference bundle, not a bulk
+import. Active coordination requires a configured integration; the tutorial
+separates shared-report review from verified agent triggering and follow-up.
