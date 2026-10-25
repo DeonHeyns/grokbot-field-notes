@@ -62,6 +62,12 @@ python3 -m unittest discover -s tests
 git diff --check
 ```
 
+For changes under `integrations/cto-coordinator`, also run:
+
+```bash
+dotnet test integrations/cto-coordinator/tests/Coordinator.Tests.csproj
+```
+
 Review representative generated prompts and every changed product claim.
 Documentation checks prove consistency, not live ChatGPT behavior. Report any
 workflow that was not exercised with real connected tools.

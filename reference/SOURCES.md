@@ -32,3 +32,14 @@ Reviewed **25 October 2026**:
 The CTO tutorial uses nine Workspace Agents, with dots optional and outside the
 core setup. Shared reports and an optional orchestration integration are design
 choices; no native agent-to-agent connection or deployed bridge is asserted.
+
+## Coordination service implementation
+
+Reviewed 25 October 2026. The [integration](../integrations/cto-coordinator/README.md)
+uses the Workspace Agent trigger/status contract above,
+[Workspace Agent access tokens](https://learn.chatgpt.com/workspace-agents/authentication),
+[ChatGPT MCP authentication](https://developers.openai.com/plugins/build/auth),
+the [official MCP C# SDK](https://github.com/modelcontextprotocol/csharp-sdk), and
+[Microsoft's Entra MCP guidance](https://learn.microsoft.com/en-us/entra/agent-id/secure-mcp-server-with-entra-id).
+Local tests use real MCP/JWT middleware with a fake upstream. Deployment, OAuth
+consent and live agent report delivery remain unverified.

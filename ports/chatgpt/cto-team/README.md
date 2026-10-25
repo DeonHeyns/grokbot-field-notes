@@ -79,7 +79,7 @@ cannot retrieve response text. Each specialist must therefore write its report
 to a location the manager can read, or use another verified result mechanism.
 A successful trigger is not a successful report. Test dispatch, source access,
 report persistence, manager readback, failures and follow-ups end to end before
-claiming autonomous coordination. This repository does not implement that bridge.
+claiming autonomous coordination. The [ASP.NET Core coordination service](../../../integrations/cto-coordinator/README.md) implements that bridge, including report submission and retrieval. It must be deployed, connected and tested with your actual agents.
 
 The intended sequence is six independent source/research agents, then Project
 Management, then Strategy, then the Chief of Staff's consolidated briefing.
