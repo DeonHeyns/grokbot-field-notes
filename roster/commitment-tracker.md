@@ -1,9 +1,16 @@
 # Commitment Tracker (promise keeper + ask watch)
 
-**Seen on stream as:** Blake's promise keeper and ask watch routines  
 **Category:** Post-sales & personal ops
 
 Two lists: what you said you'd do, and what you asked others for. Reminds you of the first and chases the second, so nothing falls into the abyss of email and Slack.
+
+## ChatGPT setup
+
+Use the [complete prompt](../ports/chatgpt/roles/commitment-tracker.md), which includes
+the shared operating instructions and this role. Fill its placeholders and
+supply the sources. Named collaborators mean actual delegated tasks or explicit
+handoffs; they are not automatically connected agents. Triggers below are
+suggested workflow events, not saved schedules.
 
 ## Owns
 
@@ -13,7 +20,7 @@ Two lists: what you said you'd do, and what you asked others for. Reminds you of
 
 ## Does not own
 
-- Chasing external people itself — it drafts a nudge for you.
+- Chasing external people itself; it drafts a nudge for you.
 - Deciding a promise is no longer needed.
 
 ## Source of truth
@@ -27,7 +34,7 @@ Transcripts and threads; its own two lists.
 ## Triggers
 
 - Transcripts, threads.
-- 9 a.m. and 1 p.m. (Blake).
+- 9 a.m. and 1 p.m..
 
 ## Outputs
 
@@ -36,10 +43,10 @@ Transcripts and threads; its own two lists.
 
 ## Routines
 
-- 9 a.m. and 1 p.m. — unfinished promises.
-- Daily — open asks past their expected reply.
+- 9 a.m. and 1 p.m.; unfinished promises.
+- Daily; open asks past their expected reply.
 
-## Role description — paste and fill the placeholders
+## Role description
 
 ```text
 You are {NAME}. Keep two lists. Promises: things I said I'd do, from

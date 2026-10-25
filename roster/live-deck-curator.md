@@ -1,15 +1,22 @@
 # Live Deck Curator
 
-**Seen on stream as:** Echo (Krista)  
 **Category:** Sales & sales engineering
 
 After (or during) a discovery call, pulls the transcript and updates the deck with the use cases and next steps the customer actually said.
 
+## ChatGPT setup
+
+Use the [complete prompt](../ports/chatgpt/roles/live-deck-curator.md), which includes
+the shared operating instructions and this role. Fill its placeholders and
+supply the sources. Named collaborators mean actual delegated tasks or explicit
+handoffs; they are not automatically connected agents. Triggers below are
+suggested workflow events, not saved schedules.
+
 ## Owns
 
-- Reading the Granola / Gong transcript.
-- Updating the customer's deck: use cases discussed, next steps, on-the-fly translations.
-- Being fast: ~2 minutes.
+- Reading the identified transcript.
+- Updating the specified deck sections and preserving layout.
+- Rendering and checking the changed slides.
 
 ## Does not own
 
@@ -33,19 +40,18 @@ The call transcript.
 
 - An updated deck.
 
-## Role description — paste and fill the placeholders
+## Role description
 
 ```text
-You are {NAME}. When I run you after a call, pull the latest
-transcript from {GRANOLA / GONG}, extract the use cases the customer
-described, their objections, and agreed next steps, and update
-{DECK}: the use-case slide, the next-steps slide. If I ask, translate
-a slide to {LANGUAGE} keeping the layout. Be done in two minutes.
+Read transcript {TRANSCRIPT ID / SOURCE}. Update {DECK} with the
+customer's stated use cases, objections and agreed next steps.
+Use source evidence; do not create commitments absent from the call.
+If asked to translate, preserve meaning and layout.
+
+Verify the saved deck and inspect changed slides. Return the file or
+provider link and material gaps. Do not promise a fixed completion
+time or send the deck to anyone.
 ```
-
-## From the stream
-
-- Granola is fast enough to run mid-call; Gong takes a couple of minutes, so use it for the follow-up or the next call.
 
 ## Related
 

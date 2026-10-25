@@ -1,0 +1,19 @@
+services:
+  coordinator:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      Coordinator__WorkspaceAccessToken: ${WORKSPACE_AGENT_ACCESS_TOKEN:?Set securely on host}
+      Coordinator__TicketKey: ${REPORT_TICKET_KEY:?Set a stable random secret on host}
+    volumes:
+      - ./src/appsettings.Local.json:/app/appsettings.Local.json:ro
+      - coordinator-data:/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+volumes:
+  coordinator-data:

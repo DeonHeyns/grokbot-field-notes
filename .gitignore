@@ -1,2 +1,13 @@
 .claude/
 .DS_Store
+__pycache__/
+*.py[cod]
+# Coordinator build outputs and private runtime data
+**/bin/
+**/obj/
+**/TestResults/
+**/appsettings.Local.json
+**/*.db
+**/*.db-shm
+**/*.db-wal
+**/.env

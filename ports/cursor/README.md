@@ -1,31 +1,30 @@
-# Cursor rules
+# Optional Cursor port
 
-The sixty-nine roster roles as Cursor rules, one `.mdc` per role, generated
-from `roster/`. Each rule carries the paste-ready description, what the role
-owns, what it doesn't, and what needs approval. Placeholders like `{NAME}`
-and `{PRODUCT}` are yours to fill.
+The 69 role cards are also exported as `.mdc` rules. This is a compatibility
+port; [ChatGPT](../chatgpt/README.md) is the primary setup for this adaptation.
 
-## Install
+Each generated rule contains shared operating boundaries, the role assignment,
+ownership, sources, approval rules, triggers and outputs. Keeping these fields
+together avoids losing important context when copying one rule.
 
-Copy the rules you want into your project:
+Copy only the rules you need into your project's `.cursor/rules/` directory.
+They declare `alwaysApply: false`; inspect your installed Cursor version's rule
+selection behavior rather than assuming copying a file invokes it. Adapt existing
+project guidance without overwriting it.
+
+From the repository root:
 
 ```bash
-mkdir -p .cursor/rules
-cp ports/cursor/rules/chief-of-staff.mdc ports/cursor/rules/pr-reviewer.mdc .cursor/rules/
+python3 scripts/build_ports.py
+python3 scripts/build_ports.py --check
 ```
 
-They ship with `alwaysApply: false`, so they load when you `@` them in a
-chat or attach them to an agent, not on every request. Set `alwaysApply:
-true` on the one rule you want in every conversation, usually
-`chief-of-staff` or `pr-reviewer`.
-
-`AGENTS.md` in the repo root is still the base layer; Cursor reads it on its
-own. These rules sit on top of it.
-
-## Regenerate
-
-The roster is the source. Edit a file in `roster/`, then:
+The existing entry point remains available:
 
 ```bash
 python3 ports/cursor/build.py
+python3 ports/cursor/build.py --check
 ```
+
+Edit `roster/*.md` and `ports/chatgpt/BASE.md`, not generated rules. No connector,
+worker or scheduled task is installed by these files.
